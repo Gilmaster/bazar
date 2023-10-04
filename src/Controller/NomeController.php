@@ -44,7 +44,12 @@ class NomeController extends AppController
         ->execute("SELECT valor FROM produto WHERE nome_id = $filtroId GROUP BY nome_id;")
         ->fetchAll('assoc');
 
-        $somaValor = $somaProd['0']['valor'];
+        if ($somaProd != null) {
+            $somaValor = $somaProd['0']['valor'];
+        }else {
+            $somaValor = 0;
+        }
+        
 
         $this->set(compact('nome','somaValor'));
     }

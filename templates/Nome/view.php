@@ -39,7 +39,6 @@
                         <tr>
                             <th><?= __('Produto') ?></th>
                             <th><?= __('Valor') ?></th>
-                            <th><?= __('Status') ?></th>
                             <th><?= __('Código da Lista') ?></th>
                             <th class="actions"><?= __('Ações') ?></th>
                         </tr>

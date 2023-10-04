@@ -2,6 +2,7 @@
 declare(strict_types=1);
 
 namespace App\Controller;
+use Cake\Datasource\ConnectionManager;
 
 /**
  * Produto Controller
@@ -59,9 +60,13 @@ class ProdutoController extends AppController
             }
             $this->Flash->error(__('The produto could not be saved. Please, try again.'));
         }
-        $nome = $this->Produto->Nome->find('list')->all();
-        $this->set(compact('produto', 'nome'));
-    }
+        // $nome = $this->Produto->Nome->find('list')->all();
+        $connection = ConnectionManager::get('default');
+        $nomeAdd = $connection
+        ->execute("SELECT id, nome FROM nome;")
+        ->fetchAll('assoc');
+        $this->set(compact('produto', 'nomeAdd'));
+        }
 
     /**
      * Edit method
@@ -84,8 +89,12 @@ class ProdutoController extends AppController
             }
             $this->Flash->error(__('The produto could not be saved. Please, try again.'));
         }
-        $nome = $this->Produto->Nome->find('list', ['limit' => 200])->all();
-        $this->set(compact('produto', 'nome'));
+        // $nome = $this->Produto->Nome->find('list', ['limit' => 200])->all();
+        $connection = ConnectionManager::get('default');
+        $nomeEdit = $connection
+        ->execute("SELECT id, nome FROM nome;")
+        ->fetchAll('assoc');
+        $this->set(compact('produto', 'nomeEdit'));
     }
 
     /**

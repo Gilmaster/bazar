@@ -5,6 +5,9 @@
  */
 ?>
 <div class="container-flex">
+    <div class="btn-group">
+        <a href="http://localhost/bazar/nome" class="btn btn-info active" aria-current="page">Lista de Nomes</a>
+    </div><br><br>
     <div class="row justify-content-between">
         <div class="col-4">
             <h3><?= __('Produto(s)') ?></h3>
@@ -12,7 +15,7 @@
         <div class="col-4">
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <?= $this->Html->link(__('Cadastrar Novo(s) Produto(s)'), ['action' => 'add'], ['class' => 'btn btn-success']) ?>
-            </div>
+            </div><br>
         </div>
     </div>
     <div class="table-responsive-sm">

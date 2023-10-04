@@ -5,6 +5,9 @@
  */
 ?>
 <div class="container-flex">
+    <div class="btn-group">
+        <a href="http://localhost/bazar/produto" class="btn btn-info active" aria-current="page">Listas de Produtos</a>
+    </div><br><br>
     <div class="row justify-content-between">
         <div class="col-4">
             <h3><?= __('Lista de cadastros') ?></h3>
@@ -13,6 +16,7 @@
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                 <?= $this->Html->link(__('Novo Cadastro'), ['action' => 'add'], ['class' => 'btn btn-success']) ?>
             </div>
+            <br>
         </div>
     </div>
     <div class="table-responsive-xxl">
